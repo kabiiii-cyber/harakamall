@@ -33,8 +33,9 @@ Column (
 
     )
 
-    Image(painter = painterResource(R.drawable.lambo),
-        contentDescription = "lambo"
+    Image(
+        painter = painterResource(R.drawable.home),
+        contentDescription = "home"
     )
 
 
