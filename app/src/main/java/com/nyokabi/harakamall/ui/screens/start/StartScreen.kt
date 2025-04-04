@@ -25,11 +25,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.navigation.ROUT_ITEM
 import com.nyokabi.harakamall.R
 import com.nyokabi.harakamall.ui.theme.neworange
 
 @Composable
-fun StartScreen(){
+fun StartScreen(navController: NavController){
 
 Column (
     modifier = Modifier.fillMaxSize(),
@@ -79,7 +82,9 @@ Column (
 
 
 
-    Button(onClick = {},
+    Button(onClick = {
+        navController.navigate(ROUT_ITEM)
+    },
         colors = ButtonDefaults.buttonColors(neworange),
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier.fillMaxWidth().padding(start =20.dp, end = 20.dp)
@@ -98,5 +103,5 @@ Column (
 @Preview(showBackground = true)
 @Composable
 fun StartScreenPreview(){
-    StartScreen()
+    StartScreen(rememberNavController())
 }
