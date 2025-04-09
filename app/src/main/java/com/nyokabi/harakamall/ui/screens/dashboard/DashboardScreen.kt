@@ -2,6 +2,7 @@ package com.nyokabi.harakamall.ui.screens.dashboard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +15,9 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Card
@@ -33,6 +36,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.navigation.ROUT_ABOUT
+import com.navigation.ROUT_HOME
+import com.navigation.ROUT_INTENT
+import com.navigation.ROUT_ITEM
 import com.nyokabi.harakamall.R
 import com.nyokabi.harakamall.ui.theme.neworange
 import com.nyokabi.harakamall.ui.theme.neworange1
@@ -43,7 +50,7 @@ import com.nyokabi.harakamall.ui.theme.newwblack
 fun DashboardScreen(navController: NavController){
 
     Column(
-        modifier = Modifier.fillMaxSize().background(neworange)
+        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).background(neworange)
     ) {
       // box
        Box (){
@@ -65,6 +72,19 @@ fun DashboardScreen(navController: NavController){
                    }
                )
 
+
+
+             Column(
+                 modifier = Modifier.fillMaxSize(),
+                 horizontalAlignment = Alignment.CenterHorizontally,
+             ){
+
+
+                 Text(text = "Welcome to Haraka Mall ",
+                     fontSize = 30.sp
+                 )
+
+             }
            }
            //end of card
 
@@ -75,26 +95,36 @@ fun DashboardScreen(navController: NavController){
                .align(alignment = Alignment.BottomCenter)
                .padding(start = 20.dp, end = 20.dp)
                .offset(y =90.dp),
-               colors = CardDefaults.cardColors(newwblack)
-           ) {
+
+               ) {
+               Image(
+                   painter = painterResource(R.drawable.img_3),
+                   contentDescription = "home",
+                   modifier = Modifier.size(500.dp)
+               )
                //content of card
              
            }
+
+           Spacer(modifier = Modifier.width(20.dp))
 
        }
      //end of box
 
 
-        Spacer(modifier = Modifier.width(20.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
 
         //Row
 
         Row (modifier = Modifier.padding(start =20.dp)){
 
-            //card
+            //card1,home
                        Card (
-                           modifier = Modifier.width(150.dp).height(180.dp),
+                           modifier = Modifier
+                               .width(150.dp)
+                               .height(180.dp)
+                               .clickable { navController.navigate(ROUT_HOME) },
                            elevation = CardDefaults.cardElevation()
                        ){
                            Column (
@@ -114,7 +144,7 @@ fun DashboardScreen(navController: NavController){
             //end of card1
 
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(40.dp))
 
 
 
@@ -122,9 +152,12 @@ fun DashboardScreen(navController: NavController){
 
 
 
-            //card2
+            //card2.ABOUT
                             Card (                                                            
-                                modifier = Modifier.width(150.dp).height(180.dp),             
+                                modifier = Modifier
+                                    .width(150.dp)
+                                    .height(180.dp)
+                                    .clickable { navController.navigate(ROUT_ABOUT) },
                                 elevation = CardDefaults.cardElevation()                      
                             ){                                                                
                                 Column (                                                      
@@ -158,9 +191,12 @@ fun DashboardScreen(navController: NavController){
 
         Row (modifier = Modifier.padding(start =20.dp)){
 
-            //card3
+            //card3.CONTACTS
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp),
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable { navController.navigate(ROUT_INTENT)},
                 elevation = CardDefaults.cardElevation()
             ){
                 Column (
@@ -181,7 +217,7 @@ fun DashboardScreen(navController: NavController){
 
 
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(40.dp))
 
 
 
@@ -190,7 +226,10 @@ fun DashboardScreen(navController: NavController){
 
             //card4
             Card (
-                modifier = Modifier.width(150.dp).height(180.dp),
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(180.dp)
+                    .clickable { navController.navigate(ROUT_ITEM) },
                 elevation = CardDefaults.cardElevation()
             ){
                 Column (
@@ -200,7 +239,7 @@ fun DashboardScreen(navController: NavController){
                 ){
 
                     Image(
-                        painter = painterResource(R.drawable.about),
+                        painter = painterResource(R.drawable.product),
                         contentDescription = "product",
                         modifier = Modifier.size(100.dp)
                     )

@@ -18,7 +18,7 @@ import com.nyokabi.harakamall.ui.screens.start.StartScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_START
+    startDestination: String = ROUT_DASHBOARD
 ) {
 
     NavHost(
