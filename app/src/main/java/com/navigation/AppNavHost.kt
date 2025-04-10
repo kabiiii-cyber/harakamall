@@ -12,13 +12,15 @@ import com.nyokabi.harakamall.ui.screens.Home.HomeScreen
 import com.nyokabi.harakamall.ui.screens.dashboard.DashboardScreen
 import com.nyokabi.harakamall.ui.screens.intent.IntentScreen
 import com.nyokabi.harakamall.ui.screens.items.ItemScreen
+import com.nyokabi.harakamall.ui.screens.service.ServiceScreen
+import com.nyokabi.harakamall.ui.screens.splash.SplashScreen
 import com.nyokabi.harakamall.ui.screens.start.StartScreen
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_DASHBOARD
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -48,6 +50,21 @@ fun AppNavHost(
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController)
         }
+
+        composable(ROUT_SERVICE) {
+             ServiceScreen(navController)
+        }
+
+        composable(ROUT_SPLASH) {
+             SplashScreen(navController)
+        }
+
+
+
+
+
+
+
 
 
     }
