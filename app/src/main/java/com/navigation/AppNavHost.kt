@@ -9,7 +9,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.nyokabi.harakamall.ui.screens.about.AboutScreen
 import com.nyokabi.harakamall.ui.screens.Home.HomeScreen
+import com.nyokabi.harakamall.ui.screens.assignment.AssignmentScreen
+import com.nyokabi.harakamall.ui.screens.assignment.AssignmentScreenPreview
 import com.nyokabi.harakamall.ui.screens.dashboard.DashboardScreen
+import com.nyokabi.harakamall.ui.screens.form.FormScreen
+import com.nyokabi.harakamall.ui.screens.form1.Form1Screen
 import com.nyokabi.harakamall.ui.screens.intent.IntentScreen
 import com.nyokabi.harakamall.ui.screens.items.ItemScreen
 import com.nyokabi.harakamall.ui.screens.service.ServiceScreen
@@ -36,11 +40,11 @@ fun AppNavHost(
         }
 
         composable(ROUT_ITEM) {
-             ItemScreen(navController)
+            ItemScreen(navController)
         }
 
         composable(ROUT_START) {
-             StartScreen(navController)
+            StartScreen(navController)
         }
 
         composable(ROUT_INTENT) {
@@ -52,20 +56,26 @@ fun AppNavHost(
         }
 
         composable(ROUT_SERVICE) {
-             ServiceScreen(navController)
+            ServiceScreen(navController)
         }
 
         composable(ROUT_SPLASH) {
-             SplashScreen(navController)
+            SplashScreen(navController)
         }
 
+        composable(ROUT_ASSIGNMENT) {
+            AssignmentScreen(navController)
+        }
+
+        composable(ROUT_FORM) {
+            FormScreen(navController)
+
+        }
+
+        composable(ROUT_FORM1) {
+            Form1Screen(navController)
 
 
-
-
-
-
-
-
+        }
     }
 }
