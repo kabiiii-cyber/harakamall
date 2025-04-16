@@ -22,13 +22,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.*
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.navigation.ROUT_DASHBOARD
 import com.navigation.ROUT_ITEM
 import com.nyokabi.harakamall.R
 import com.navigation.ROUT_REGISTER
+import com.nyokabi.harakamall.ui.screens.about.AboutScreen
 import com.nyokabi.harakamall.viewmodel.AuthViewModel
 
 @Composable
@@ -152,3 +155,5 @@ fun LoginScreen(
         }
     }
 }
+
+

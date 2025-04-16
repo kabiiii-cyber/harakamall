@@ -86,7 +86,7 @@ fun AppNavHost(
         composable(ROUT_FORM1) {
             Form1Screen(navController)
 
-
+        }
             //AUTHENTICATION
 
             // Initialize Room Database and Repository for Authentication
@@ -115,6 +115,6 @@ fun AppNavHost(
 
 
 
-        }
+
     }
 }

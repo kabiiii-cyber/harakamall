@@ -40,7 +40,22 @@ fun  SplashScreen(navController: NavController){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
 
+
     ){
+
+
+
+        //navigation
+
+        val coroutine = rememberCoroutineScope()
+        coroutine.launch {
+            delay(2000)
+            navController.navigate(ROUT_LOGIN)
+
+        }
+
+        //end of navigation
+
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -63,16 +78,7 @@ fun  SplashScreen(navController: NavController){
 
 
     }
-    //navigation
 
-    val coroutine = rememberCoroutineScope()
-    coroutine.launch {
-        delay(2000)
-        navController.navigate(ROUT_LOGIN)
-
-    }
-
-    //end of navigation
 
 }
 
