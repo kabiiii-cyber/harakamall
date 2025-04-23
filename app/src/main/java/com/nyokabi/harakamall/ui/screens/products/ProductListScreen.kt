@@ -44,6 +44,7 @@ import com.nyokabi.harakamall.model.Product
 import com.navigation.ROUT_ADD_PRODUCT
 import com.navigation.ROUT_EDIT_PRODUCT
 import com.navigation.ROUT_PRODUCT_LIST
+import com.navigation.editProductRoute
 import java.io.IOException
 import java.io.OutputStream
 
@@ -230,7 +231,7 @@ fun ProductItem(navController: NavController, product: Product, viewModel: Produ
                     // Edit Product
                     IconButton(
                         onClick = {
-                            navController.navigate(ROUT_PRODUCT_LIST)
+                            navController.navigate(editProductRoute(product.id))
                         }
                     ) {
                         Icon(

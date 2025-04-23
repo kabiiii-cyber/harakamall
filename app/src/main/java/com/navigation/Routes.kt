@@ -26,3 +26,5 @@ const val ROUT_ADD_PRODUCT = "add_product"
 const val ROUT_PRODUCT_LIST = "product_list"
 const val ROUT_EDIT_PRODUCT = "edit_product/{productId}"
 
+fun editProductRoute(productid: Int) = "edit_product$productid"
+
